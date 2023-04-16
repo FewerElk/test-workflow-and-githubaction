@@ -13,6 +13,8 @@ class Open(object):
         
     def read(self):
         """read and  decode the world file's data"""
+        final = []
+        chunk_temp = {}
         curent_value = ""
         self.state = 0       #self.state=0 : reading chunk id ; self.state=1 : reading chunk blocks
         for l, item in enumerate(self.data):
@@ -39,4 +41,9 @@ class Open(object):
             
     def next(self):
         """Go to the next value and apply"""
-        ...
+        if self.state == 0:
+            ...
+        elif self.state == 1:
+            ...
+        else:
+            raise RuntimeError
